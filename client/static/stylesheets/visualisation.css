@@ -1,0 +1,32 @@
+/* Trend Report */
+
+  .axis {
+    font: 10px sans-serif;
+  }
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .toolTip {
+  position: absolute;
+  display: none;
+  min-width: 20px;
+  height: auto;
+  background: none repeat scroll 0 0 #ffffff;
+  border: 1px solid #6F257F;
+  padding: 5px;
+  text-align: center;
+  }
+
+  .trendline{
+    z-index: 3;
+  }
+
+
+
+  .modal-box1 g.react-d3-core__axis__xAxis {
+    display:none !important;
+  }

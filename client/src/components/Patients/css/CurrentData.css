@@ -1,0 +1,23 @@
+.current-data-section {
+    padding-top: 10px;
+    height: 100%;
+}
+.current-data {
+    top: 20px;
+    left: 20px;
+    font-size: 36px;
+    color: #00bcdb;
+    height: 80px;
+    width: 80px;
+    background-color: transparent;
+    border: 5px solid #00bcdb;
+    border-radius: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.current-data p {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+}
