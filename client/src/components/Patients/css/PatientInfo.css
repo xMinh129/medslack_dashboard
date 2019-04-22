@@ -1,0 +1,58 @@
+@media all and ( min-width: 768px ) and (max-width: 991px) {
+
+    html, body {
+        overflow: hidden;
+    }
+
+    .patient-detail {
+        display: inline-block;
+        width: 70%;
+        height: 270px;
+        padding-right: 10px
+    }
+
+    .col-md-2 {
+        height: 290px
+    }
+
+    .patient-info {
+        height: 270px;
+        float: left;
+        width: 30%
+    }
+
+    .patient-age {
+        height: 100%;
+        width: 20%;
+        float: left;
+    }
+
+    .age {
+        padding: 10px 10px !important
+    }
+
+    .patient-height {
+        width: 22%;
+        float: left;
+        height: 100%;
+        margin-right: 30px;
+        border-right: 1px solid white;
+    }
+
+    .patient-info-table {
+        display: inline-block;
+        width: 50%
+    }
+
+    .content-box {
+        padding-right: 0px
+    }
+
+    .col-md-10 {
+        padding-top: 0px
+    }
+
+    .content-box-large {
+        padding-top: 0px
+    }
+}

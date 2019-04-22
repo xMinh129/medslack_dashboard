@@ -1,6 +1,6 @@
 const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-
+var webpack = require('webpack')
 
 module.exports = {
     // the entry file for the bundle
@@ -57,7 +57,12 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './client/static/index.html'
-        })
+        }),
+        new webpack.DefinePlugin({
+            'process.env':{
+                'NODE_ENV': JSON.stringify('production')
+            }
+        }),
     ],
     // start Webpack in a watch mode, so Webpack will rebuild the bundle on changes
     watch: true

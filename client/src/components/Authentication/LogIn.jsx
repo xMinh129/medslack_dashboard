@@ -36,8 +36,7 @@ class LogIn extends React.Component {
 
         // create an AJAX request
         const xhr = new XMLHttpRequest();
-        // xhr.open('post', 'http://34.85.45.103:5010/api/users/login');
-        xhr.open('post', 'http://localhost:5010/api/users/login');
+        xhr.open('post', 'http://35.247.135.116:5010/api/users/login');
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
         xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
@@ -51,7 +50,6 @@ class LogIn extends React.Component {
                 });
                 // save the token and user data
                 Auth.authenticateUser(xhr.response.user, xhr.response.token);
-                // change the current URL to /
 
                 if (this.props.location.pathname === '/login') {
                     browserHistory.push('/');

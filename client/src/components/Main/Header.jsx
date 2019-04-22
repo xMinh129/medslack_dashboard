@@ -5,28 +5,30 @@ import "./css/Header.css";
 
 class Header extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
     }
 
 
-    render(){
-
+    render() {
         return (
             <div className="header">
+                <img className="app-logo" src="https://i.ibb.co/bHKrCCJ/logo.png"
+                alt="logo" border="0"></img>
                 <a href="" className="logo" style={{'color': 'white'}}>MedSlack</a>
                 <input className="menu-btn" type="checkbox" id="menu-btn"/>
                 <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
 
                 {
                     Auth.isUserAuthenticated() ? (
+
                         <ul className="menu">
                             <li><Link to="/">Home</Link></li>
                             {
                                 Auth.isAdmin() ? (
-                                    <li><Link to="/">Admin</Link></li>
+                                    <li><Link to="/admin">Admin</Link></li>
                                 ) : (
-                                    <div></div>
+                                    <li></li>
                                 )
                             }
                             <li><Link to={{pathname: '/logout'}}>Log Out </Link></li>
@@ -34,10 +36,8 @@ class Header extends React.Component {
                     ) : (
                         <ul className="menu">
                             <li><Link to={{pathname: '/login', state: {from: this.props.location}}}>Log In</Link></li>
-                            {/*<li><Link to="/">Sign Up </Link></li>*/}
                         </ul>
                     )
-
                 }
 
             </div>

@@ -32,7 +32,7 @@
 
 .header li a:hover,
 .header .menu-btn:hover {
-    background-color: #F66530;
+    background-color: #EF9192;
     border-right: 1px solid transparent;
 
 }
@@ -41,7 +41,7 @@
     display: block;
     float: left;
     font-size: 2em;
-    padding: 10px 20px 10px 60px;
+    padding: 10px 20px 10px 0px;
     text-decoration: none;
     font-weight: bold
 }
@@ -91,6 +91,14 @@
 
 .header .menu-icon .navicon:after {
     top: -5px;
+}
+
+.app-logo {
+    float:left;
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    margin-right: 10px
 }
 
 /* menu btn */

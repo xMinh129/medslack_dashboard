@@ -2,9 +2,6 @@ import React, {Component} from 'react';
 import * as d3 from "d3";
 import ReactFauxDOM from 'react-faux-dom';
 import '../Statistics/css/Chart.css';
-import Auth from "../../handlers/Auth";
-import moment from 'moment';
-import dataAPI from "../../apis/dataAPI";
 
 
 /****************************  bPO2ChartComp  ******************************/
@@ -15,7 +12,6 @@ class LiveChart extends Component {
         super(props);
 
         this.state = {
-            data: this.props.data,
             err: false,
             body_width: 1000
         };
@@ -24,16 +20,19 @@ class LiveChart extends Component {
     componentWillMount() {
     }
 
+    componentDidUpdate(prevProps, prevState) {
+    }
+
     render() {
 
-        let chartData = this.state.data;
+        let chartData = this.props.data;
+        let dataType = this.props.dataType;
 
-        if (chartData) {
-
+        if (chartData && this.props.data.length > 0) {
             let data = chartData;
 
             let margin = {top: 40, right: 20, bottom: 30, left: 30},
-                width = 1050 - margin.left - margin.right,
+                width = 900 - margin.left - margin.right,
                 height = 200 - margin.top - margin.bottom;
 
             // parse the date / time
@@ -59,6 +58,7 @@ class LiveChart extends Component {
             let svg = parent.append("svg")
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom)
+                .attr("class", "chart-line")
                 .append("g")
                 .attr("transform",
                     "translate(" + margin.left + "," + margin.top + ")");
@@ -81,7 +81,8 @@ class LiveChart extends Component {
             svg.append("path")
                 .data([data])
                 .attr("class", "line")
-                .attr("d", valueLine);
+                .attr("d", valueLine)
+                .attr("class", dataType);
 
             // Add the X Axis
             svg.append("g")

@@ -1,5 +1,5 @@
 import React from 'react';
-import SessionList from "../Patients/SessionList.jsx";
+import SessionList from "../Sessions/SessionList.jsx";
 import Auth from "../../handlers/Auth";
 import {Link} from "react-router";
 import './css/Main.css';

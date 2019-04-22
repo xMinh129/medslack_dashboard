@@ -2,9 +2,10 @@ import Auth from "../src/handlers/Auth";
 import Base from './components/Main/Base.jsx';
 import Index from './components/Main/Index.jsx';
 import LogIn from './components/Authentication/LogIn.jsx';
-import SessionList from "./components/Patients/SessionList.jsx";
-import Session from "./components/Patients/Session.jsx";
-import EditSession from "./components/Patients/EditSession.jsx"
+import SessionList from "./components/Sessions/SessionList.jsx";
+import Session from "./components/Sessions/Session.jsx";
+import EditSession from "./components/Sessions/EditSession.jsx";
+import Admin from './components/Admin/Admin.jsx'
 
 const routes = {
     // base component (wrapper for the whole application).
@@ -43,6 +44,11 @@ const routes = {
             path: '/sessions/:sessionID/edit',
             exactly: true,
             component: EditSession
+        },
+        {
+            path: '/admin',
+            exactly: true,
+            component: Admin
         }
     ]
 };
